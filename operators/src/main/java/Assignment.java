@@ -16,7 +16,7 @@ public class Assignment {
         t2.level = 47;
         System.out.println("1: t1.level: " + t1.level +
                 ", t2.level: " + t2.level);
-        t1 = t2;
+        t1 = t2;//这里是传递对象的引用
         System.out.println("2: t1.level: " + t1.level +
                 ", t2.level: " + t2.level);
         t1.level = 27;

@@ -2,6 +2,7 @@ package polymorphism;// polymorphism/CovariantReturn.java
 // (c)2017 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
+//协变:派生类中重写的方法可以返回的类型为基类返回类型的派生类型。
 
 class Grain {
     @Override

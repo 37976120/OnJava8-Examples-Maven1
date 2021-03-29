@@ -6,6 +6,8 @@
 // {java interfaces.music4.Music4}
 package music4;
 
+//import polymorphism.music.Note;
+
 import polymorphism.music.Note;
 
 abstract class Instrument {

@@ -4,6 +4,7 @@ package polymorphism;// polymorphism/PolyConstructors.java
 // Visit http://OnJava8.com for more book information.
 // Constructors and polymorphism
 // don't produce what you might expect
+//构造器中调用重写方法
 
 class Glyph {
     void draw() {
@@ -12,7 +13,7 @@ class Glyph {
 
     Glyph() {
         System.out.println("Glyph() before draw()");
-        draw();
+        draw();//尽量调用的是final方法（包括private）
         System.out.println("Glyph() after draw()");
     }
 }
@@ -21,7 +22,7 @@ class RoundGlyph extends Glyph {
     private int radius = 1;
 
     RoundGlyph(int r) {
-        radius = r;
+        radius = r; //初始化
         System.out.println(
                 "RoundGlyph.RoundGlyph(), radius = " + radius);
     }
@@ -29,7 +30,7 @@ class RoundGlyph extends Glyph {
     @Override
     void draw() {
         System.out.println(
-                "RoundGlyph.draw(), radius = " + radius);
+                "RoundGlyph.draw(), radius = " + radius); //Glyph构造器调用时radius还没初始化
     }
 }
 

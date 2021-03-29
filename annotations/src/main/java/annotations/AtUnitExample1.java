@@ -26,7 +26,8 @@ public class AtUnitExample1 {
         if (file.isDirectory()) {
             return;
         }
-        File newFile = newFileName(file);
+//        File newFile = newFileName(file);
+        File newFile = newFileName2(file);//直接在后面加1
 
         FileInputStream fileInputStream = new FileInputStream(file);
         FileChannel srcChannel = fileInputStream.getChannel();
@@ -35,6 +36,13 @@ public class AtUnitExample1 {
         tarChannel.transferFrom(srcChannel, 0, srcChannel.size());
         fileInputStream.close();
         fileOutputStream.close();
+        //删除原文件
+        boolean delete = file.delete();
+    }
+
+    private static File newFileName2(File file) {
+        String absolutePath = file.getAbsolutePath();
+        return new File(absolutePath + "1");
     }
 
     public static File newFileName(File file) {
@@ -55,22 +63,16 @@ public class AtUnitExample1 {
     }
 
     public static void main(String[] args) throws Exception {
-        File srcFile = new File("D:\\text");
+        File srcFile = new File("D:/test");
+        boolean directory = srcFile.isDirectory();
+        boolean file = srcFile.isFile();
         copyFiles(srcFile);
 
-//        ByteBuffer buffer = ByteBuffer.allocate(1024);
-//        while (true) {
-//            buffer.clear();
-//            int read = srcChannel.read(buffer);
-//            if (read == -1) {
-//                break;
-//            }
-//            buffer.flip();
-//            tarChannel.write(buffer);
-//
-//        }
-//        srcFileInputStream.close();
-//        tarFileInputStream.close();
+//        String s1 = "abc";
+//        String s2 = new String("abc");
+//        System.out.println(s1.hashCode());
+//        System.out.println(s2.hashCode());
+//        System.out.println(s1==s2.intern());
     }
 
     public String methodOne() {

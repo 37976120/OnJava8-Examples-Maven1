@@ -3,6 +3,7 @@ package polymorphism;// polymorphism/ReferenceCounting.java
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
 // Cleaning up shared member objects
+//计数器
 
 class Shared {
     private int refcount = 0;

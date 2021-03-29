@@ -16,7 +16,7 @@ class Insect {
     private static int x1 =
             printInit("static Insect.x1 initialized");
 
-    static int printInit(String s) {
+     static int printInit(String s) {
         System.out.println(s);
         return 47;
     }
@@ -40,7 +40,7 @@ public class Beetle extends Insect {
 }
 /* Output:
 static Insect.x1 initialized
-static Beetle.x2 initialized
+static Beetle.x2 initialized //类加载完成后
 Beetle constructor
 i = 9, j = 0
 Beetle.k initialized
